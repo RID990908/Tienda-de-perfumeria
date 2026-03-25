@@ -1,0 +1,24 @@
+# Dependencias
+node_modules/
+
+# Next.js
+.next/
+out/
+
+# Variables de entorno
+.env
+.env.local
+
+# Builds
+dist/
+build/
+
+# TypeScript
+*.tsbuildinfo
+
+# Logs / errores
+*.log
+tsc_errors*.txt
+
+# Sistema
+.DS_Store

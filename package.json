@@ -1,0 +1,19 @@
+{
+  "name": "vainybliss-workspace",
+  "private": true,
+  "workspaces": [
+    "frontend",
+    "backend"
+  ],
+  "scripts": {
+    "dev": "npm run dev:clean && concurrently \"npm run dev:frontend\" \"npm run dev:backend\"",
+    "dev:clean": "powershell -ExecutionPolicy Bypass -File ./scripts/dev-clean.ps1",
+    "dev:fresh": "npm run dev:clean && npm run dev",
+    "health:admin": "node ./scripts/health-check-admin.mjs",
+    "dev:frontend": "npm run dev --workspace=frontend",
+    "dev:backend": "npm run dev --workspace=backend"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

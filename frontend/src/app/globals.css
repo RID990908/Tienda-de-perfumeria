@@ -1,0 +1,183 @@
+@import "tailwindcss";
+
+:root {
+  --background: #efe4d4;
+  --foreground: #2d241f;
+  --brand-deep: #0f4b36;
+  --brand-deep-strong: #0b3d2b;
+  --brand-soft: #e8ddd0;
+  --brand-gold: #ccb48f;
+  --brand-rose: #a4807f;
+  --surface: rgba(255, 250, 244, 0.78);
+  --surface-strong: rgba(255, 251, 246, 0.9);
+  --surface-muted: rgba(246, 239, 230, 0.92);
+  --line: rgba(177, 146, 113, 0.42);
+  --shadow: 0 22px 60px rgba(55, 36, 17, 0.14);
+  --glow: 0 16px 40px rgba(15, 75, 54, 0.14);
+  --font-body: "Manrope", "Segoe UI", sans-serif;
+  --font-brand: "Cormorant Garamond", Georgia, serif;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-body);
+  --font-serif: var(--font-brand);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  background:
+    linear-gradient(rgba(246, 238, 229, 0.45), rgba(234, 220, 201, 0.55)),
+    url("/fondo-vainybliss.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: var(--foreground);
+  font-family: var(--font-body), sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+.auth-bg,
+.admin-bg {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  background:
+    linear-gradient(rgba(247, 238, 229, 0.4), rgba(238, 226, 210, 0.52)),
+    url("/fondo-vainybliss.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.auth-bg::before,
+.admin-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 12% 20%, rgba(255, 255, 255, 0.52), transparent 26%),
+    radial-gradient(circle at 88% 24%, rgba(15, 75, 54, 0.18), transparent 20%),
+    radial-gradient(circle at 78% 78%, rgba(255, 255, 255, 0.34), transparent 24%);
+  pointer-events: none;
+}
+
+.auth-card,
+.glass-panel {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow), inset 0 0 0 1px rgba(255, 255, 255, 0.48);
+  backdrop-filter: blur(18px);
+}
+
+.auth-input,
+.admin-input {
+  border: 1px solid rgba(168, 140, 122, 0.45);
+  background: var(--surface-strong);
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.46),
+    0 8px 16px rgba(73, 49, 30, 0.05);
+}
+
+.auth-input:focus-within,
+.admin-input:focus-within {
+  outline: 2px solid rgba(15, 75, 54, 0.18);
+  outline-offset: 2px;
+}
+
+.auth-button,
+.admin-button {
+  background: linear-gradient(120deg, var(--brand-deep-strong), var(--brand-deep));
+  box-shadow: var(--glow);
+}
+
+.auth-link,
+.admin-link {
+  color: #1d5f44;
+}
+
+.admin-shell {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+}
+
+.admin-table-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(15, 75, 54, 0.28) transparent;
+}
+
+.admin-table-scroll::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+.admin-table-scroll::-webkit-scrollbar-thumb {
+  background: rgba(15, 75, 54, 0.28);
+  border-radius: 999px;
+}
+
+.admin-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(320px, 0.8fr);
+  gap: 1.5rem;
+}
+
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  padding: 0.28rem 0.75rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.status-pill--active {
+  background: rgba(149, 201, 155, 0.34);
+  color: #1d6b33;
+}
+
+.status-pill--inactive {
+  background: rgba(193, 157, 157, 0.25);
+  color: #835252;
+}
+
+.field-error {
+  color: #9d414b;
+}
+
+@media (max-width: 1180px) {
+  .admin-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .auth-bg,
+  .admin-bg {
+    background-position: 28% center;
+  }
+}

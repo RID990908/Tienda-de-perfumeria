@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="240" viewBox="0 0 240 240" fill="none">
+  <defs>
+    <linearGradient id="vb" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#b07c86"/>
+      <stop offset="100%" stop-color="#1f4d38"/>
+    </linearGradient>
+  </defs>
+  <circle cx="120" cy="120" r="112" fill="#f6f1eb" stroke="url(#vb)" stroke-width="6"/>
+  <path d="M70 92c16-22 40-26 58-14" stroke="#b07c86" stroke-width="4" stroke-linecap="round"/>
+  <path d="M112 84c4 12 16 20 30 18" stroke="#b07c86" stroke-width="4" stroke-linecap="round"/>
+  <text x="120" y="140" text-anchor="middle" font-size="44" font-family="Georgia, 'Times New Roman', serif" fill="#1f4d38">
+    VainyBliss
+  </text>
+</svg>
